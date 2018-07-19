@@ -16,6 +16,6 @@ https://github.com/Wiznet/WIZ550S2E
 - First release
 - Added features
 	- Modbus
-		- v1.20 Configuration Tool is required.
+		- [v1.20 Configuration Tool](https://github.com/Wiznet/WIZnet_Configuration_Tool-Modbus) is required.
 ### Old version
 - See the following link. [https://github.com/Wiznet/WIZ550S2E](https://github.com/Wiznet/WIZ550S2E)

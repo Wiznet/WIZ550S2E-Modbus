@@ -11,6 +11,8 @@ Serial to Ethernet Module based on W5500 &amp; Cortex-M0
 - Second release
 - Changed App build optimization level -O3 to -O1.
 - Changed Boot Makefile generation option.
+- Add watchdog
+	- Watchdog timeout can be set up to max 5 seconds, so the timeout has been set to 5 seconds
 
 ### v1.4.0
 - First release

@@ -8,8 +8,7 @@ Serial to Ethernet Module based on W5500 &amp; Cortex-M0
 </p>
 
 This is the Modbus version repository, see the following link for the MQTT version repository.
-
-https://github.com/Wiznet/WIZ550S2E
+- https://github.com/Wiznet/WIZ550S2E
 
 ### v1.4.1
 - Second release

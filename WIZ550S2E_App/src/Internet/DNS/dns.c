@@ -366,20 +366,29 @@ int8_t parseDNSMSG(struct dhdr * pdhdr, uint8_t * pbuf, uint8_t * ip_from_dns)
 	for (i = 0; i < pdhdr->qdcount; i++)
 	{
 		cp = dns_question(msg, cp);
-   #ifdef _DNS_DEUBG_
-      printf("MAX_DOMAIN_NAME is too small, it should be redfine in dns.h"
-   #endif
-		if(!cp) return -1;
+
+		if(!cp)
+		{
+#ifdef _DNS_DEBUG_
+			printf("MAX_DOMAIN_NAME is too small, it should be redefine in dns.h");
+#endif
+			return -1;
+		}
 	}
 
 	/* Answer section */
 	for (i = 0; i < pdhdr->ancount; i++)
 	{
 		cp = dns_answer(msg, cp, ip_from_dns);
-   #ifdef _DNS_DEUBG_
-      printf("MAX_DOMAIN_NAME is too small, it should be redfine in dns.h"
-   #endif
-		if(!cp) return -1;
+
+		if(!cp)
+		{
+#ifdef _DNS_DEBUG_
+			printf("MAX_DOMAIN_NAME is too small, it should be redefine in dns.h");
+#endif
+			return -1;
+		}
+
 	}
 
 	/* Name server (authority) section */
@@ -523,9 +532,9 @@ int8_t DNS_run(uint8_t * dns_ip, uint8_t * name, uint8_t * ip_from_dns)
 		{
 			if (len > MAX_DNS_BUF_SIZE) len = MAX_DNS_BUF_SIZE;
 			len = recvfrom(DNS_SOCKET, pDNSMSG, len, ip, &port);
-      #ifdef _DNS_DEBUG_
+#ifdef _DNS_DEBUG_
 	      printf("> Receive DNS message from %d.%d.%d.%d(%d). len = %d\r\n", ip[0], ip[1], ip[2], ip[3],port,len);
-      #endif
+#endif
          ret = parseDNSMSG(&dhp, pDNSMSG, ip_from_dns);
 			break;
 		}

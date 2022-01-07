@@ -158,7 +158,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/modbus}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/Application/loopback}&quot;"/>
 								</option>
-								<option id="com.crt.advproject.gcc.exe.release.option.optimization.level.1797076545" name="Optimization Level" superClass="com.crt.advproject.gcc.exe.release.option.optimization.level" value="gnu.c.optimization.level.most" valueType="enumerated"/>
+								<option id="com.crt.advproject.gcc.exe.release.option.optimization.level.1797076545" name="Optimization Level" superClass="com.crt.advproject.gcc.exe.release.option.optimization.level" value="gnu.c.optimization.level.optimize" valueType="enumerated"/>
 								<inputType id="com.crt.advproject.compiler.input.1380003728" superClass="com.crt.advproject.compiler.input"/>
 							</tool>
 							<tool id="com.crt.advproject.gas.exe.release.212299160" name="MCU Assembler" superClass="com.crt.advproject.gas.exe.release">

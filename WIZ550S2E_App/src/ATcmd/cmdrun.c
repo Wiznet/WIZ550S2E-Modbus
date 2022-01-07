@@ -995,7 +995,10 @@ void act_fdns(char *url)
 	uint8_t backup;
 	S2E_Packet *value = get_S2E_Packet_pointer();
 	uint8_t dns_server_ip[4], dns_domain_name[50];
-	char str[16];
+	char *str;
+
+	str = malloc(32);
+	memset(str, 0, sizeof(str));
 
 	memcpy(dns_server_ip, value->options.dns_server_ip, sizeof(dns_server_ip));
 	if(url == NULL) {
@@ -1015,7 +1018,7 @@ void act_fdns(char *url)
 			cmd_resp_dump(VAL_NONE, (int8_t *)str);
 			break;
 		}
-		else if(ret == -1) {
+		else if((ret == -1) || (ret == 0)) {
 			sprintf(str, "DNS Timeout\r\n");
 			cmd_resp_dump(VAL_NONE, (int8_t *)str);
 			break;
